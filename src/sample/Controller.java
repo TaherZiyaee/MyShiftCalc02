@@ -19,7 +19,7 @@ public class Controller implements Initializable {
 
 
     @FXML
-    private ComboBox<String> comboMonth;
+    private ComboBox<String> comboMonth, combo3Friday;
     @FXML
     private Label lblMonthTitle, lblMonthDomain;
 
@@ -29,14 +29,46 @@ public class Controller implements Initializable {
     }
 
     public void setLblMonthDomain(Label lblMonthDomain) {
-        String textDomain = "21st ESFAND ~ 20th FARVARDIN";
+        int monthDays;
+        String textDomain = null;
         selectedMonth = comboMonth.getSelectionModel().getSelectedItem();
         switch (selectedMonth) {
             case "FARVARDIN":
-                textDomain = "21st ESFAND ~ 20th FARVARDIN";
+                textDomain = "21st Esfand ~ 20th Farvardin";
+                monthDays = 31;
                 break;
             case "ORDIBEHESHT":
-                textDomain = "21st FARVARDIN ~ 20th ORDIBEHESHT";
+                textDomain = "21st Farvardin ~ 20th Ordibehesht";
+                break;
+            case "KHORDAD":
+                textDomain = "21st Ordibehesht ~ 20th Khordad";
+                break;
+            case "TIR":
+                textDomain = "21st Khordad ~ 20th Tir";
+                break;
+            case "MORDAD":
+                textDomain = "21st Tir ~ 20th Mordad";
+                break;
+            case "SHAHRIVAR":
+                textDomain = "21st Mordad ~ 20th Shahrivar";
+                break;
+            case "MEHR":
+                textDomain = "21st Shahrivar ~ 20th Mehr";
+                break;
+            case "ABAN":
+                textDomain = "21st Mehr ~ 20th Aban";
+                break;
+            case "AZAR":
+                textDomain = "21st Aban ~ 20th Azar";
+                break;
+            case "DAY":
+                textDomain = "21st Azar ~ 20th Day";
+                break;
+            case "BAHMAN":
+                textDomain = "21st Day ~ 20th Bahman";
+                break;
+            case "ESFAND":
+                textDomain = "21st Bahman ~ 20th Esfand";
                 break;
         }
         lblMonthDomain.setText(textDomain);
@@ -58,13 +90,18 @@ public class Controller implements Initializable {
                 "MEHR","ABAN","AZAR",
                 "DAY","BAHMAN","ESFAND"
         };
+
         ObservableList<String> months = FXCollections.observableArrayList(persianMonths);
         comboMonth.setItems(months);
         comboMonth.setValue(persianMonths[0]);
 
         lblMonthTitle.setText(String.format("%s 1400",persianMonths[0]));
-        //        String selectedMonth = comboMonth.getSelectionModel().getSelectedItem();
-//        monthTitle.setText(String.format("%s 1400",selectedMonth));
+        lblMonthDomain.setText("21st ESFAND ~ 20th FARVARDIN");
+
+        String[] threeFridaysSelect = {"None","Shift 1","Shift 2"};
+        ObservableList<String> threeFri = FXCollections.observableArrayList(threeFridaysSelect);
+        combo3Friday.setItems(threeFri);
+        combo3Friday.setValue(threeFridaysSelect[0]);
 
     }
 

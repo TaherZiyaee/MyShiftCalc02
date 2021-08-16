@@ -1,62 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #F2F2F2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #F2F2F2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Pane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #82397D;">
+      <Pane prefHeight="500.0" prefWidth="350.0" style="-fx-background-color: #82397D;">
          <children>
-            <Label layoutX="140.0" layoutY="14.0" text="Shift Calculator" textFill="#eee9e9">
+            <Label layoutX="115.0" layoutY="14.0" text="Shift Calculator" textFill="#eee9e9">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Separator layoutX="75.0" layoutY="50.0" prefWidth="250.0" />
-            <Label layoutX="79.0" layoutY="125.0" text="Month" textFill="#eee9e9">
+            <Separator layoutX="75.0" layoutY="47.0" prefWidth="200.0" />
+            <Label layoutX="63.0" layoutY="99.0" text="Month" textFill="#eee9e9">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <JFXComboBox fx:id="comboMonth" focusColor="#ff5f2f" layoutX="162.0" layoutY="123.0" onAction="#comboAction" prefHeight="25.0" prefWidth="150.0" styleClass="jfx-combo-box" stylesheets="@Style.css" unFocusColor="#eee9e9" />
-            <Label layoutX="78.0" layoutY="178.0" text="Fridays" textFill="#eee9e9">
+            <JFXComboBox fx:id="comboMonth" focusColor="#ff5f2f" layoutX="170.0" layoutY="87.0" onAction="#comboAction" prefHeight="25.0" prefWidth="120.0" styleClass="jfx-combo-box" stylesheets="@Style.css" unFocusColor="#eee9e9" />
+            <Label layoutX="62.0" layoutY="138.0" text="Fridays" textFill="#eee9e9">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <JFXTextField focusColor="#ff5f2f" layoutX="162.0" layoutY="175.0" prefWidth="150.0" unFocusColor="#eee9e9" />
+            <JFXTextField fx:id="txtFridays" focusColor="#ff5f2f" layoutX="170.0" layoutY="126.0" prefWidth="120.0" styleClass="all-Labels" stylesheets="@Style.css" unFocusColor="#eee9e9" />
+            <Label layoutX="62.0" layoutY="177.0" text="Thursdays" textFill="#eee9e9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtThursdays" focusColor="#ff5f2f" layoutX="170.0" layoutY="164.0" prefWidth="120.0" styleClass="all-Labels" stylesheets="@Style.css" unFocusColor="#eee9e9">
+               <opaqueInsets>
+                  <Insets left="10.0" />
+               </opaqueInsets>
+            </JFXTextField>
+            <Label layoutX="62.0" layoutY="215.0" text="Wednesdays" textFill="#eee9e9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtWednesdays" focusColor="#ff5f2f" layoutX="170.0" layoutY="201.0" prefWidth="120.0" styleClass="all-Labels" stylesheets="@Style.css" unFocusColor="#eee9e9" />
+            <Label layoutX="62.0" layoutY="249.0" text="F-Holidays" textFill="#eee9e9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtFHolidays" focusColor="#ff5f2f" layoutX="170.0" layoutY="236.0" prefWidth="120.0" styleClass="all-Labels" stylesheets="@Style.css" unFocusColor="#eee9e9" />
+            <Label layoutX="62.0" layoutY="286.0" text="W-Holidays" textFill="#eee9e9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtWHolidays" focusColor="#ff5f2f" layoutX="170.0" layoutY="273.0" prefWidth="120.0" styleClass="all-Labels" stylesheets="@Style.css" unFocusColor="#eee9e9" />
+            <JFXCheckBox fx:id="chkFridays" checkedColor="#ff5f2f" layoutX="62.0" layoutY="356.0" text="Get Fridays?" textFill="#eee9e9" unCheckedColor="#8d8888">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="chkLeap" checkedColor="#ff5f2f" layoutX="62.0" layoutY="392.0" text="Is Leap Year?" textFill="#eee9e9" unCheckedColor="#8d8888">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXButton fx:id="btnCalculate" layoutX="87.0" layoutY="440.0" prefHeight="30.0" prefWidth="176.0" style="-fx-background-color: #127305; -fx-background-radius: 5;" text="Calculate" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="62.0" layoutY="318.0" text="3 Fridays" textFill="#eee9e9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="combo3Friday" focusColor="#ff5f2f" layoutX="169.0" layoutY="306.0" onAction="#comboAction" prefHeight="25.0" prefWidth="120.0" styleClass="jfx-combo-box" stylesheets="@Style.css" unFocusColor="#eee9e9" />
          </children>
       </Pane>
-      <Separator layoutX="603.0" layoutY="189.0" orientation="VERTICAL" prefHeight="200.0" />
-      <Label layoutX="490.0" layoutY="162.0" text="Shift 1" textFill="#403e3e">
+      <Separator layoutX="529.0" layoutY="192.0" orientation="VERTICAL" prefHeight="200.0" />
+      <Label layoutX="416.0" layoutY="165.0" text="Shift 1" textFill="#403e3e">
          <font>
             <Font size="18.0" />
          </font>
+         <tooltip>
+            <Tooltip text="Start from 21st">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Label>
-      <Label layoutX="655.0" layoutY="162.0" text="Shift 2" textFill="#403e3e">
+      <Label layoutX="581.0" layoutY="165.0" text="Shift 2" textFill="#403e3e">
          <font>
             <Font size="18.0" />
          </font>
+         <tooltip>
+            <Tooltip text="Start from 22nd">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Label>
-      <ImageView fitHeight="51.0" fitWidth="20.0" layoutX="766.0" layoutY="14.0" onMouseClicked="#exitApplication" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="51.0" fitWidth="20.0" layoutX="676.0" layoutY="4.0" onMouseClicked="#exitApplication" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_multiply_208px.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblMonthTitle" alignment="CENTER" layoutX="462.0" layoutY="11.0" prefHeight="27.0" prefWidth="288.0" text="F" textFill="#403e3e">
+      <Label fx:id="lblMonthTitle" alignment="CENTER" layoutX="394.0" layoutY="18.0" prefHeight="27.0" prefWidth="273.0" text="Month Name" textFill="#403e3e">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Separator layoutX="478.0" layoutY="50.0" prefWidth="250.0" />
-      <Label fx:id="lblMonthDomain" alignment="CENTER" layoutX="598.0" layoutY="53.0" text="m" textFill="#403e3e" />
+      <Separator layoutX="430.0" layoutY="48.0" prefWidth="200.0" />
+      <Label fx:id="lblMonthDomain" alignment="CENTER" contentDisplay="CENTER" layoutX="404.0" layoutY="55.0" prefHeight="17.0" prefWidth="251.0" text="Month Domain" textAlignment="CENTER" textFill="#403e3e">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+      <Label fx:id="lblMonthDomain1" alignment="CENTER" contentDisplay="CENTER" layoutX="404.0" layoutY="455.0" prefHeight="17.0" prefWidth="251.0" text="Regular Working Hour" textAlignment="CENTER" textFill="#403e3e">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
