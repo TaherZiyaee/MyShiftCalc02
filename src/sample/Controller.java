@@ -19,7 +19,9 @@ public class Controller implements Initializable {
 
 
     @FXML
-    private ComboBox<String> comboMonth, combo3Friday;
+    private ComboBox<String> comboMonth;
+    @FXML
+    private ComboBox<String> combo3Friday;
     @FXML
     private Label lblMonthTitle, lblMonthDomain;
 
