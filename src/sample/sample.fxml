@@ -74,7 +74,7 @@
                   <Font size="14.0" />
                </font>
             </JFXCheckBox>
-            <JFXButton fx:id="btnCalculate" layoutX="87.0" layoutY="440.0" prefHeight="30.0" prefWidth="176.0" style="-fx-background-color: #127305; -fx-background-radius: 5;" text="Calculate" textFill="WHITE">
+            <JFXButton fx:id="btnCalculate" layoutX="87.0" layoutY="440.0" onMouseClicked="#calculation" prefHeight="30.0" prefWidth="176.0" style="-fx-background-color: #ff5f2f; -fx-background-radius: 5;" text="Calculate" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -161,14 +161,14 @@
       <Separator layoutX="430.0" layoutY="48.0" prefWidth="200.0" />
       <Label fx:id="lblMonthDomain" alignment="CENTER" contentDisplay="CENTER" layoutX="404.0" layoutY="55.0" prefHeight="17.0" prefWidth="251.0" text="Month Domain" textAlignment="CENTER" textFill="#403e3e">
          <font>
-            <Font size="10.0" />
+            <Font size="12.0" />
          </font></Label>
-      <Label fx:id="lblMonthDomain1" alignment="CENTER" contentDisplay="CENTER" layoutX="404.0" layoutY="455.0" prefHeight="17.0" prefWidth="251.0" text="Regular Working Hour" textAlignment="CENTER" textFill="#403e3e">
+      <Label fx:id="lblRegWorking" alignment="CENTER" contentDisplay="CENTER" layoutX="404.0" layoutY="455.0" prefHeight="17.0" prefWidth="251.0" text="Regular Working Hour" textAlignment="CENTER" textFill="#403e3e">
          <font>
-            <Font size="10.0" />
+            <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="409.0" layoutY="238.0" text="10" textFill="#403e3e">
+      <Label fx:id="lblShift1" layoutX="409.0" layoutY="238.0" text="10" textFill="#403e3e">
          <font>
             <Font size="64.0" />
          </font>
@@ -180,7 +180,7 @@
             </Tooltip>
          </tooltip>
       </Label>
-      <Label layoutX="572.0" layoutY="238.0" text="17" textFill="#403e3e">
+      <Label fx:id="lblShift2" layoutX="572.0" layoutY="238.0" text="17" textFill="#403e3e">
          <font>
             <Font size="64.0" />
          </font>
