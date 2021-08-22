@@ -115,7 +115,6 @@ public class Controller implements Initializable {
         int wedCalc = wed - wHoliday;
         int edariDays = monthDays - (lastweek + wedCalc + fHoliday);
         int edariHours = edariDays * 9;
-        System.out.println(fri + 10);
 
         lblShift1.setText(txtFridays.getText());
         if (lblShift1.getText().length() < 2)
